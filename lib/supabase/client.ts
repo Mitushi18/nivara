@@ -1,3 +1,4 @@
+
 import { createBrowserClient } from "@supabase/ssr";
 
 export function createClient() {
@@ -6,6 +7,9 @@ export function createClient() {
   const supabaseUrl = rawUrl
     .replace(/\/rest\/v1\/?$/, "")
     .replace(/\/$/, "");
+
+  console.log("NIVARA RAW URL:", rawUrl);
+  console.log("NIVARA FINAL URL:", supabaseUrl);
 
   return createBrowserClient(
     supabaseUrl,
